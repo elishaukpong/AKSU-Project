@@ -1,0 +1,31 @@
+/*
+COLOR SCHEME
+
+Primary Color: #2393DA
+
+*/
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.primary-color {
+    color: #2393DA;
+}
+
+.header-welcome {
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+}
+
+.header-welcome2 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.signup-button {
+    border-radius: 50px !important;
+    font-size: 1.2em;
+}
