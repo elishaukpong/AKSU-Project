@@ -10,7 +10,7 @@ body {
 }
 
 .primary-color {
-    color: #2393DA;
+    color: #2393DA !important;
 }
 
 .header-welcome {
@@ -28,4 +28,23 @@ body {
 .signup-button {
     border-radius: 50px !important;
     font-size: 1.2em;
+}
+
+.text-content {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.before-footer {
+    background-color: #4C4981;
+    /* background-color: #173F5F; */
+}
+
+footer {
+    background-color: #173F5F;
 }
