@@ -88,6 +88,11 @@ footer {
     border-radius: 50px !important;
 }
 
+.blog-show-button {
+    font-size: 1.3em;
+    border-radius: 50px !important;
+}
+
 .blog-tag .shadow {
     box-shadow: 0 .5rem .5rem rgba(231, 226, 226, 0.449)!important
 }
@@ -103,4 +108,8 @@ footer {
 
 .card:hover {
     box-shadow: 0 1rem 1rem rgba(231, 226, 226, 0.449)!important
+}
+
+.blog-text {
+    font-size: 1.2em;
 }

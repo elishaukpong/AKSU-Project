@@ -13,7 +13,11 @@
 
 Route::get('/', 'NavigationController@index')->name('index');
 Route::get('/about', 'NavigationController@about')->name('about');
-Route::get('/blog', 'NavigationController@blog')->name('blog');
+Route::get('/blog', 'BlogController@index')->name('blog');
+// Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
+Route::get('/blog/show', function(){
+    return view('blog.show');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

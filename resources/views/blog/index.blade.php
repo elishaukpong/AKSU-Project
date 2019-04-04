@@ -2,7 +2,7 @@
 
 @section('content')
 <section>
-    <div class="container">
+    <div class="container d-none d-md-block">
         <div class="row">
             <div class="col-md-5 col-12">
                 <h3 class="font-weight-light primary-color">A blog about everything AKSU</h3>
@@ -107,7 +107,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-12 border-md-left pl-md-5 my-2 my-md-0">
+            <div class="col-md-4 col-12 border-md-left pl-md-5 my-2 my-md-0 d-none d-md-block">
                 <div class="most-popular">
                     <h4 class="font-weight-bold text-dark py-3">
                         Most Popular
