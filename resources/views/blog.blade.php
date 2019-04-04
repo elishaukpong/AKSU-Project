@@ -29,14 +29,27 @@
     </div>
 </section>
 
-<section class="first-post">
-    <div class="container">
-        <div class="row text-content">
-            <div class="col-md-6 col-12">
+<section class="first-post my-5">
+    <div class="container shadow">
+        <div class="row ">
+            <div class="col-md-6 col-12 text-content px-5 ">
+                <p class="mb-0">
+                    <a href="#" class="blog-tag-button btn-primary px-4 py-2"> Educational </a>
+                </p>
+                <h1 class="text-left my-4 font-weight-bold text-dark">
+                    My first Day in Akwa Ibom State University
+                </h1>
+                <p>January 29th, 2019</p>
 
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ab omnis eos. Expedita quisquam excepturi maiores eaque neque in cumque!
+                </p>
+                <p class="mb-0">
+                    <a href="#" class="btn btn-sm btn-dark px-4 py-2"> Read More</a>
+                </p>
             </div>
-            <div class="col-md-6 col-12">
-
+            <div class="col-md-6 col-12 pr-0">
+                <img src="{{asset('img/blog1.jpg')}}" alt="blog image" class="img-fluid">
             </div>
         </div>
     </div>
