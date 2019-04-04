@@ -64,3 +64,43 @@ footer {
 .blog-tag-button:hover {
     text-decoration: none;
 }
+
+.second-block .card-header,
+.second-block .card-body {
+    padding: 0;
+}
+
+.second-block .card-header img {
+    position: relative;
+    width: 50em;
+    height: 18em;
+}
+
+.blog-tag {
+    position: absolute;
+    z-index: 99;
+    top: 1em;
+    left: 1em;
+}
+
+.blog-tag-button-2 {
+    font-size: .8em;
+    border-radius: 50px !important;
+}
+
+.blog-tag .shadow {
+    box-shadow: 0 .5rem .5rem rgba(231, 226, 226, 0.449)!important
+}
+
+.second-block .card {
+    border: 0;
+}
+
+.most-popular li,
+.most-recent li {
+    list-style-type: none;
+}
+
+.card:hover {
+    box-shadow: 0 1rem 1rem rgba(231, 226, 226, 0.449)!important
+}
