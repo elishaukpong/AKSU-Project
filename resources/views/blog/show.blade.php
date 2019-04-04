@@ -1,4 +1,4 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
 @section('content')
 <section>
@@ -50,7 +50,7 @@
 </section>
 
 <section>
-<div class="container">
+<div class="container d-none d-md-block">
     <div class="row">
         <div class="col-10 mx-auto">
             <div class="row">

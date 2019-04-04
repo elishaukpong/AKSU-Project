@@ -113,3 +113,30 @@ footer {
 .blog-text {
     font-size: 1.2em;
 }
+
+
+/* Auth */
+
+.auth {
+    height: 100vh;
+    background: linear-gradient(90deg, #314755 0%, #26a0da 100%);
+}
+
+.auth main {
+    border-radius: 25px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-left {
+    background: #26a0da;
+}
+
+.auth-right {
+    /* border-top-right-radius: 15px; */
+    /* border-bottom-right-radius: 15px; */
+}
