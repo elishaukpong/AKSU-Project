@@ -39,7 +39,7 @@
             <div class="col-md-3 col-8 mx-auto">
                 <img src="{{asset('img/second.svg')}}" alt="header image" class="img-fluid">
             </div>
-            <div class="col-md-7 col-12 mx-auto text-content">
+            <div class="col-md-7 col-12 mx-auto text-content mt-3 mt-md-0">
                 <h1 class="display-4  primary-color">Meet People!</h1>
                 <p class="mx-5 ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae modi deserunt veniam eos voluptas odio in deleniti laboriosam ducimus excepturi, ipsam, non maxime quibusdam sunt quidem quisquam aspernatur suscipit amet!
@@ -51,12 +51,12 @@
         {{-- Join Alumni --}}
         <div class="row">
             <div class="col-md-7 col-12 mx-auto text-content">
-                <h1 class="display-4  primary-color">Join Alumni!</h1>
+                <h1 class="display-4  primary-color mt-3 mt-md-0">Join Alumni!</h1>
                 <p class="mx-5 ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae modi deserunt veniam eos voluptas odio in deleniti laboriosam ducimus excepturi, ipsam, non maxime quibusdam sunt quidem quisquam aspernatur suscipit amet!
                 </p>
             </div>
-            <div class="col-md-3 col-8 mx-auto">
+            <div class="col-md-3 col-8 mx-auto order-first order-md-last">
                 <img src="{{asset('img/alumni.svg')}}" alt="header image" class="img-fluid">
             </div>
         </div>
@@ -68,7 +68,7 @@
                 <img src="{{asset('img/help.svg')}}" alt="header image" class="img-fluid">
             </div>
             <div class="col-md-7 col-12 mx-auto text-content">
-                <h1 class="display-4  primary-color">Get Help!</h1>
+                <h1 class="display-4  primary-color mt-3 mt-md-0">Get Help!</h1>
                 <p class="mx-5 ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae modi deserunt veniam eos voluptas odio in deleniti laboriosam
                     ducimus excepturi, ipsam, non maxime quibusdam sunt quidem quisquam aspernatur suscipit amet!
@@ -80,19 +80,19 @@
         {{-- Find Love --}}
         <div class="row">
             <div class="col-md-7 col-12 mx-auto text-content">
-                <h1 class="display-4  primary-color">Find Love!</h1>
+                <h1 class="display-4  primary-color mt-3 mt-md-0">Find Love!</h1>
                 <p class="mx-5 ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae modi deserunt veniam eos voluptas odio in deleniti laboriosam
                     ducimus excepturi, ipsam, non maxime quibusdam sunt quidem quisquam aspernatur suscipit amet!
                 </p>
             </div>
-            <div class="col-md-4 col-8 mx-auto">
+            <div class="col-md-4 col-12  mx-auto order-first order-md-last">
                 <img src="{{asset('img/love.svg')}}" alt="header image" class="img-fluid">
             </div>
         </div>
 
         <div class="mt-2 mt-md-3 pt-md-3 mt-lg-5 pt-lg-4"> </div>
-        {{-- Find Love --}}
+
         <div class="row">
             <div class="col-md-7 col-12 mx-auto text-content">
                 <h1 class="display-4  primary-color">All in AKSU</h1>
@@ -106,16 +106,17 @@
 </section>
 
 <section class="before-footer">
-<div class="container">
-    <div class="row">
-        <div class="col-12 text-center text-white py-5 text-warning">
-            <i class="fa fa-bus mr-3 display-4" aria-hidden="true"></i>
-            <h2>
-                Are you ready for an intriguing ride through campus?
-            </h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center text-white py-5 text-warning">
+                <i class="fa fa-bus mr-3 display-4" aria-hidden="true"></i>
+                <h2>
+                    Are you ready for an intriguing ride through campus?
+                </h2>
+                <a class="signup-button btn btn-outline-warning rounded px-5 mt-3" href="{{ route('register') }}">{{ __("Let's Go") }}</a>
+            </div>
         </div>
     </div>
-</div>
 </section>
 @endsection
 
