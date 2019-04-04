@@ -13,7 +13,7 @@
                         <h4 class="px-4">Welcome back to  the ever growing AKSU community</h4>
                         <br><br><br>
                         <small>
-                            ...alot happened when you were away
+                            ...alot happened while you were away
                         </small>
                     </div>
                     <div class="col-lg-8 col-12 bg-light py-5 auth-right">
