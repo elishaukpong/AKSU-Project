@@ -9,7 +9,7 @@
                     <span class="font-weight-light">About </span>  AKSU MATTERS!</h1>
                 <h1 class="font-weight-bold primary-color d-lg-none"> <span class="font-weight-light">About </span><br>AKSU MATTERS!</h1>
 
-                <p class="mt-3 about-content mr-5 pr-5">
+                <p class="mt-3 about-content mr-md-5 pr-md-5">
                     We are committed to bringing you the best tailored information regarding Akwa Ibom State University, ranging through campus trends, hottest gist on campus, most fashion-concious student, educational freebies, late night gossips, love-life, Kasalas', parties and trendy events to make your stay on campus fun and lively.
                     <br><br>
                     Aksu Matters! aims to build a bond between students by creating a free and leveled ground of interaction between ourselves .

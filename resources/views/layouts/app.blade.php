@@ -41,10 +41,13 @@
                                 <a class="nav-link primary-color mx-3" href="{{route('about')}}">{{ __('About') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link primary-color mx-3" href="#">{{ __('Blog') }}</a>
+                                <a class="nav-link primary-color mx-3" href="{{route('blog')}}">{{ __('Blog') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link primary-color mx-3" href="#">{{ __('Students') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link primary-color mx-3" href="#">{{ __('Campuses') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link primary-color mx-3" href="{{ route('login') }}">{{ __('Login') }}</a>

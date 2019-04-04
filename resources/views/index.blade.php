@@ -97,7 +97,7 @@
             <div class="col-md-7 col-12 mx-auto text-content">
                 <h1 class="display-4  primary-color">All in AKSU</h1>
                 <p class="mx-5 ">
-                    These and many more...
+                    Find accomodation, find room mates, and many more...
                 </p>
             </div>
 

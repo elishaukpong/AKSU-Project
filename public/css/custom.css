@@ -53,3 +53,12 @@ footer {
     line-height: 2em;
     font-size: 1.2em;
 }
+
+.blog-tag-button {
+    border-radius: 50px !important;
+    font-size: 1em;
+}
+
+.blog-tag-button:hover {
+    text-decoration: none;
+}
