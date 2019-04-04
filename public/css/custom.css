@@ -48,3 +48,8 @@ body {
 footer {
     background-color: #173F5F;
 }
+
+.about-content {
+    line-height: 2em;
+    font-size: 1.2em;
+}

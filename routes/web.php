@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'NavigationController@index');
+Route::get('/', 'NavigationController@index')->name('index');
+Route::get('/about', 'NavigationController@about')->name('about');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

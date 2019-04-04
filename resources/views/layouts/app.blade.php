@@ -38,7 +38,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link primary-color mx-3" href="#">{{ __('About') }}</a>
+                                <a class="nav-link primary-color mx-3" href="{{route('about')}}">{{ __('About') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link primary-color mx-3" href="#">{{ __('Blog') }}</a>
