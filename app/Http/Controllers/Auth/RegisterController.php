@@ -75,7 +75,7 @@ class RegisterController extends Controller
 
     public function generateSlug($name){
         do{
-            $slug = str_slug($name) .'_'. rand(1000,9000);
+            $slug = str_slug($name) .'-'. rand(1000,9000);
         }while(User::whereSlug($slug)->first());
         return $slug;
     }
