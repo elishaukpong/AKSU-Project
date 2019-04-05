@@ -8,17 +8,11 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    @if (session('return-user'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('return-user') }}
-                        </div>
-                    @endif
-
                     You are logged in!
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>
 @endsection
