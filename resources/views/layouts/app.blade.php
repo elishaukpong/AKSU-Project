@@ -75,6 +75,7 @@
         </nav>
 
         <main class="pt-4">
+            @include('inc.alerts')
             @yield('content')
         </main>
         @include('inc.footer')

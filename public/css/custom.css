@@ -135,3 +135,35 @@ footer {
 .auth-left {
     background: #26a0da;
 }
+
+.onboarding-box {
+    position: absolute;
+    z-index: 99;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.onboard-box {
+    /* background-color: #173F5F; */
+    background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+    border-radius: 10px;
+}
+
+.onboard-next-button,
+.onboard-prev-button {
+    border-radius: 50px !important;
+    border: 2px solid;
+    font-size: 1.2em;
+    transition: background-color .5s;
+    color: #fff !important;
+}
+
+.onboard-next-button:hover {
+    border-radius: 50px !important;
+    font-size: 1.2em;
+    color: #fff;
+}
