@@ -24,10 +24,10 @@
                         <div class="form-group row">
 
                             <div class="col-md-8 mx-auto">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"
-                                    required autofocus placeholder="Enter Email or Reg Number"> @if ($errors->has('email'))
+                                <input  type="text" class="form-control{{ $errors->has('email') || $errors->has('reg_number') ? ' is-invalid' : '' }}" name="login" value="{{ old('email') || old('reg_number') }}"
+                                    required autofocus placeholder="Enter Email or Reg Number"> @if ($errors->has('email') || $errors->has('reg_number'))
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('email') }}</strong>
+                                    <strong>{{ $errors->first('email') ?? $errors->first('reg_number') }}</strong>
                                 </span> @endif
                             </div>
                         </div>
