@@ -32,7 +32,7 @@
 
                         <div class="form-group row">
                             <div class="col-md-8 mx-auto">
-                                <input id="reg_number" type="text" class=" px-4 form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="reg_number" value="{{ old('reg_number') }}"
+                                <input id="reg_number" type="text" class=" px-4 form-control{{ $errors->has('reg_number') ? ' is-invalid' : '' }}" name="reg_number" value="{{ old('reg_number') }}"
                                     required autofocus placeholder="Reg. Number"> @if ($errors->has('reg_number'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('reg_number') }}</strong>
@@ -53,7 +53,7 @@
 
                         <div class="form-group row">
                             <div class="col-md-8 mx-auto">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
+                                <input id="password" type="password" class="px-4 form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
                                     required placeholder="Enter Password"> @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('password') }}</strong>
@@ -63,7 +63,7 @@
 
                         <div class="form-group row">
                             <div class="col-md-8 mx-auto">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Re-Enter Password">
+                                <input id="password-confirm" type="password" class="px-4 form-control" name="password_confirmation" required placeholder="Re-Enter Password">
                             </div>
                         </div>
 

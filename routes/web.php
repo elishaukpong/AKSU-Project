@@ -15,9 +15,7 @@ Route::get('/', 'NavigationController@index')->name('index');
 Route::get('/about', 'NavigationController@about')->name('about');
 Route::get('/blog', 'BlogController@index')->name('blog');
 // Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
-Route::get('/blog/show', function(){
-    return view('auth.passwords.reset');
-});
-Auth::routes();
+
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

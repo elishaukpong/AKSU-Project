@@ -50,6 +50,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'reg_number' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
@@ -66,7 +67,16 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'reg_number' => $data['reg_number'],
+            'slug' => $this->generateSlug($data['name']),
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function generateSlug($name){
+        do{
+            $slug = str_slug($name) .'_'. rand(1000,9000);
+        }while(User::whereSlug($slug)->first());
+        return $slug;
     }
 }
