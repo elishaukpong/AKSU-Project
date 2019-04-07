@@ -94,7 +94,7 @@
         <div class="mt-2 mt-md-3 pt-md-3 mt-lg-5 pt-lg-4"> </div>
 
         <div class="row">
-            <div class="col-md-7 col-12 mx-auto text-content">
+            <div class="col-md-7 col-12 mx-auto text-content text-center">
                 <h1 class="display-4  primary-color">All in AKSU</h1>
                 <p class="mx-5 ">
                     Find accomodation, find room mates, and many more...

@@ -14,6 +14,7 @@
 Route::get('/', 'NavigationController@index')->name('index');
 Route::get('/about', 'NavigationController@about')->name('about');
 Route::get('/blog', 'BlogController@index')->name('blog');
+Route::get('/contact', 'NavigationController@contact')->name('contact');
 // Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
 
 Auth::routes(['verify' => true]);

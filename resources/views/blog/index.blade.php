@@ -314,7 +314,7 @@
                         <div class="form-group row my-4">
                             <div class="col-md-6 offset-md-2">
                                 <input id="email" type="email" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Enter Email Address"
-                                    required autofocus> @if ($errors->has('name'))
+                                    required> @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('name') }}</strong>
                                 </span> @endif
