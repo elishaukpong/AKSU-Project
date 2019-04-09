@@ -39,7 +39,7 @@
             <div class="col-md-3 col-8 mx-auto">
                 <img src="{{asset('img/second.svg')}}" alt="header image" class="img-fluid">
             </div>
-            <div class="col-md-7 col-12 mx-auto text-content mt-3 mt-md-0">
+            <div class="col-md-7 col-12 mx-auto text-content mt-3 mt-md-0 text-center">
                 <h1 class="display-4  primary-color">Meet People!</h1>
                 <p class="mx-5 ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae modi deserunt veniam eos voluptas odio in deleniti laboriosam ducimus excepturi, ipsam, non maxime quibusdam sunt quidem quisquam aspernatur suscipit amet!
@@ -50,7 +50,7 @@
         <div class="mt-2 mt-md-3 pt-md-3 mt-lg-5 pt-lg-4"></div>
         {{-- Join Alumni --}}
         <div class="row">
-            <div class="col-md-7 col-12 mx-auto text-content">
+            <div class="col-md-7 col-12 mx-auto text-content text-center">
                 <h1 class="display-4  primary-color mt-3 mt-md-0">Join Alumni!</h1>
                 <p class="mx-5 ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae modi deserunt veniam eos voluptas odio in deleniti laboriosam ducimus excepturi, ipsam, non maxime quibusdam sunt quidem quisquam aspernatur suscipit amet!
@@ -67,7 +67,7 @@
             <div class="col-md-4 col-8 mx-auto">
                 <img src="{{asset('img/help.svg')}}" alt="header image" class="img-fluid">
             </div>
-            <div class="col-md-7 col-12 mx-auto text-content">
+            <div class="col-md-7 col-12 mx-auto text-content text-center">
                 <h1 class="display-4  primary-color mt-3 mt-md-0">Get Help!</h1>
                 <p class="mx-5 ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae modi deserunt veniam eos voluptas odio in deleniti laboriosam
@@ -79,7 +79,7 @@
         <div class="mt-2 mt-md-3 pt-md-3 mt-lg-5 pt-lg-4"> </div>
         {{-- Find Love --}}
         <div class="row">
-            <div class="col-md-7 col-12 mx-auto text-content">
+            <div class="col-md-7 col-12 mx-auto text-contenttext-center">
                 <h1 class="display-4  primary-color mt-3 mt-md-0">Find Love!</h1>
                 <p class="mx-5 ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae modi deserunt veniam eos voluptas odio in deleniti laboriosam

@@ -36,7 +36,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
 }
 
 .before-footer {
@@ -166,4 +165,25 @@ footer {
     border-radius: 50px !important;
     font-size: 1.2em;
     color: #fff;
+}
+
+.profile-header-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.header-text {
+    word-wrap: break-word;
+}
+
+.jumbotron.campus-jumbotron {
+    background-image: linear-gradient(to right, #328cf257, #328cf28b), url('../img/campus.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-aksu {
+    line-height: 1.9em;
+    font-size: 1.2em;
 }

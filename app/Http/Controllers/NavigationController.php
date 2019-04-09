@@ -16,5 +16,8 @@ class NavigationController extends Controller
     public function contact(){
         return view('contact');
     }
+    public function campuses(){
+        return view('campuses');
+    }
 
 }

@@ -18,8 +18,11 @@
 </head>
 <body>
     <div id="app">
-
+        @guest
         @include('inc.nav')
+        @else
+        @include('inc.auth-nav')
+        @endguest
         <main class="pt-4">
             @include('inc.alerts')
             @yield('content')
