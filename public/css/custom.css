@@ -187,3 +187,12 @@ footer {
     line-height: 1.9em;
     font-size: 1.2em;
 }
+
+.alumni-student-header {
+    /* position: absolute; */
+    height: 40rem;
+    width: 65em;
+    -webkit-clip-path: circle(67.7% at 23% 43%);
+    clip-path: circle(67.7% at 23% 43%);
+    background: #0a4281;
+}

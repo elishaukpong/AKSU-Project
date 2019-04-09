@@ -45,7 +45,7 @@
             <h1 class="primary-color font-weight-bold text-center py-3">Main Campus</h1>
             <div class="row">
                 <div class="col-12">
-                    <a href="#" class="btn signup-button btn-outline-primary rounded"> See More Details </a>
+                    <a href="#" class="btn signup-button btn-outline-primary rounded px-4"> Explore Campus </a>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             <h1 class="primary-color font-weight-bold text-center py-3">Obio Akpa Campus</h1>
             <div class="row">
                 <div class="col-12">
-                    <a href="#" class="btn signup-button btn-outline-primary rounded"> See More Details </a>
+                    <a href="#" class="btn signup-button btn-outline-primary rounded px-4"> Explore Campus </a>
                 </div>
             </div>
         </div>

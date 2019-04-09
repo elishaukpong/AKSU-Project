@@ -29,7 +29,7 @@
                     <a class="nav-link primary-color mx-3" href="{{route('contact')}}">{{ __('Contact Us') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link primary-color mx-3" href="#">{{ __('Alumni') }}</a>
+                    <a class="nav-link primary-color mx-3" href="{{route('alumni.index')}}">{{ __('Alumni') }}</a>
                 </li>
 
                 <li class="nav-item dropdown">

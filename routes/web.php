@@ -18,6 +18,11 @@ Route::get('/contact', 'NavigationController@contact')->name('contact');
 Route::get('/campuses', 'NavigationController@campuses')->name('campuses');
 // Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
 
+
+// Alumni Routes
+Route::get('/alumni', 'AlumnistudentsController@index')->name('alumni.index');
+
+
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'UserController@index')->name('home');
