@@ -6,10 +6,14 @@
         <div class="col-12">
             <div class="jumbotron campus-jumbotron text-center">
 
-                <h1 class="display-1 text-white font-weight-bold">
+                <h1 class="display-1 text-white font-weight-bold d-none d-lg-block">
                     AKSU CAMPUSES
                 </h1>
-            <h1 class="text-white font-weight-bold">2 Campuses; One Insitution</h1>
+                <h1 class="text-white font-weight-bold d-lg-none">
+                    AKSU CAMPUSES
+                </h1>
+                <h1 class="text-white font-weight-bold d-none d-lg-block">2 Campuses; One Insitution</h1>
+                <p class="text-white about-aksu d-lg-none">2 Campuses; One Insitution</p>
 
             </div>
         </div>
@@ -56,7 +60,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-12">
+
+        <div class="col-md-6 col-12 order-first order-md-last">
             <img src="{{asset('img/blog2.jpg')}}" alt="header image" class="img-fluid">
         </div>
     </div>
