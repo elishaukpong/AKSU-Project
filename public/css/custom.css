@@ -196,3 +196,20 @@ footer {
     clip-path: circle(67.7% at 23% 43%);
     background: #0a4281;
 }
+
+.class-list .card:hover {
+    background: transparent;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.class-list .card-header {
+    box-shadow: 0;
+    transition: all .5s
+}
+
+.class-list .card-header:hover {
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    border-radius: 50px;
+    color: #fff;
+}
