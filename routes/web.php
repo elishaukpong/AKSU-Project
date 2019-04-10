@@ -20,9 +20,10 @@ Route::get('/campuses', 'NavigationController@campuses')->name('campuses');
 
 
 // Alumni Routes
-Route::get('/alumni', 'AlumnistudentsController@index')->name('alumni.index');
+Route::get('/alumni', 'AlumniController@index')->name('alumni.index');
 
-
+// User Routes
+Route::get('/profile','UserController@profile')->name('profile');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'UserController@index')->name('home');

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Alumnistudents;
+use App\Administrators;
 use Illuminate\Http\Request;
 
-class AlumnistudentsController extends Controller
+class AdministratorsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AlumnistudentsController extends Controller
      */
     public function index()
     {
-        return view('alumni.index');
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class AlumnistudentsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Alumnistudents  $alumnistudents
+     * @param  \App\Administrators  $administrators
      * @return \Illuminate\Http\Response
      */
-    public function show(Alumnistudents $alumnistudents)
+    public function show(Administrators $administrators)
     {
         //
     }
@@ -52,10 +52,10 @@ class AlumnistudentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Alumnistudents  $alumnistudents
+     * @param  \App\Administrators  $administrators
      * @return \Illuminate\Http\Response
      */
-    public function edit(Alumnistudents $alumnistudents)
+    public function edit(Administrators $administrators)
     {
         //
     }
@@ -64,10 +64,10 @@ class AlumnistudentsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Alumnistudents  $alumnistudents
+     * @param  \App\Administrators  $administrators
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Alumnistudents $alumnistudents)
+    public function update(Request $request, Administrators $administrators)
     {
         //
     }
@@ -75,10 +75,10 @@ class AlumnistudentsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Alumnistudents  $alumnistudents
+     * @param  \App\Administrators  $administrators
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Alumnistudents $alumnistudents)
+    public function destroy(Administrators $administrators)
     {
         //
     }

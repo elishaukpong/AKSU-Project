@@ -6,6 +6,29 @@
         <div class="col-12 text-center text-dark pt-3 mb-4">
             <img src="{{asset('img/blog2.jpg')}}" alt="header image" class="img-fluid profile-header-image mb-3">
             <h2 class="font-weight-bold header-text">Johnnie Edem</h2>
+            <p class="text-secondary p-0 m-1">Level 300 | Chemistry Education</p>
+
+            <p class="text-secondary p-0 m-0">Basic User | <i class="fa fa-eercast" aria-hidden="true"></i> 1000</p>
+
+            <div class="py-3">
+                <ul class="list-inline">
+                    <li class="list-inline-item px-1">
+                        <a href="#">
+                            <i class="fa fa-facebook social-icons text-secondary" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item px-1">
+                        <a href="#">
+                            <i class="fa fa-twitter social-icons text-secondary" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item px-1">
+                        <a href="#">
+                            <i class="fa fa-instagram social-icons text-secondary" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -16,58 +39,6 @@
 @endsection
 
 @section('right-hand-content')
-    <div class="row">
-        <div class="col-12 text-center text-dark pt-3 mb-4">
-            <h2 class="">Weekly Featured Photo</h2>
-            <img src="{{asset('img/blog2.jpg')}}" alt="header image" class="img-fluid rounded">
-            <div class="featured-image-details text-left pt-4">
-                <p><span class="font-weight-bold pr-3">Name:</span>Esther Johnnie Okon
-                <br>
-                <span class="font-weight-bold pr-3">Department:</span> Chemistry Education
-                <br>
-                <span class="font-weight-bold pr-3">Level:</span> 300 Level
-                <br>
-                <span class="font-weight-bold pr-3">Hobbies:</span> <br>Cooking, Twerking, Skin showing
-            </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 text-center pt-3 mb-4">
-            <h2 class="text-dark py-3">Trending Gists</h2>
-
-            <div class="trending-gist-list">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <a href="#">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id.
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id.
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id.
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id.
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id.
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
+    @include('inc.sidebar')
 @endsection
 

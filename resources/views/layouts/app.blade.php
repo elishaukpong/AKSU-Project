@@ -28,7 +28,6 @@
             @yield('content')
         </main>
         @include('inc.footer')
-
     </div>
 </body>
 </html>
