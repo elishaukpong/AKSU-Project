@@ -17,12 +17,12 @@ class ApartmentController extends Controller
     protected $routeIndex = 'apartments';
 
     protected $pageTitle = 'Apartment';
-    protected $createRoute = 'apartments.create';
+    protected $createRoute = 'apartment.create';
 
-    protected $viewIndex = 'apartments.index';
-    protected $viewCreate = 'apartments.create';
-    protected $viewEdit = 'apartments.edit';
-    protected $viewShow = 'apartments.show';
+    protected $viewIndex = 'apartment.index';
+    protected $viewCreate = 'apartment.create';
+    protected $viewEdit = 'apartment.edit';
+    protected $viewShow = 'apartment.show';
 
     /**
      * ApartmentController constructor.

@@ -32,6 +32,7 @@ Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => 'auth'], function(){
     Route::resource('apartments', 'Apartments\ApartmentController');
+//    Route::resource('apartments', 'Apartments\ApartmentController')->only(['index', 'show']);
     Route::get('/home', 'User\UserController@dashboard')->name('home');
 });
 

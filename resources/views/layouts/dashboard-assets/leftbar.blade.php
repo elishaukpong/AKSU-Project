@@ -16,8 +16,8 @@
                     <span class="hide-menu">Apartments</span>
                 </li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="ticket-list.html"
+                <li class="sidebar-item @if(\Route::is('apartments.create')) selected @endif">
+                    <a class="sidebar-link @if(\Route::is('apartments.create')) active @endif" href="{{route('apartments.create')}}"
                        aria-expanded="false"><i class="icon-location-pin"></i>
                         <span
                             class="hide-menu">Add Apartment
@@ -25,11 +25,11 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="ticket-list.html"
+                <li class="sidebar-item @if(\Route::is('apartments.index')) selected @endif">
+                    <a class="sidebar-link @if(\Route::is('apartments.index')) active @endif" href="{{route('apartments.index')}}"
                                              aria-expanded="false"><i data-feather="tag" class="feather-icon"></i>
                         <span
-                            class="hide-menu">List Apartment
+                            class="hide-menu">List Apartments
                                 </span>
                     </a>
                 </li>
