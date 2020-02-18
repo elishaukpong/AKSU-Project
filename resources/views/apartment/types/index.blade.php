@@ -10,8 +10,8 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">All Apartment Tags</h4>
-                    <a href="{{route('apartment.tags.create')}}" class="text-white btn btn-dark btn-sm btn-rounded"><i class="far fa-heart"></i> Create New Tag</a>
+                    <h4 class="card-title">All Apartment Types</h4>
+                    <a href="{{route('apartment.types.create')}}" class="text-white btn btn-dark btn-sm btn-rounded"><i class="far fa-heart"></i> Create New Type</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-dark mb-0">
@@ -30,15 +30,15 @@
                                 <td>{{$entity->name}}</td>
                                 <td>{{$entity->shortdesc}}</td>
                                 <td>
-                                    <a href="{{route('apartment.tags.show', $entity->id)}}" class="btn btn-sm btn-primary px-3 rounded">
+                                    <a href="{{route('apartment.types.show', $entity->id)}}" class="btn btn-sm btn-primary px-3 rounded">
                                         Show
                                     </a>
 
-                                    <a href="{{route('apartment.tags.edit', $entity->id)}}" class="btn btn-sm btn-cyan px-3 rounded">
+                                    <a href="{{route('apartment.types.edit', $entity->id)}}" class="btn btn-sm btn-cyan px-3 rounded">
                                         Edit
                                     </a>
 
-                                    <a href="{{route('apartment.tags.destroy', $entity->id)}}" class="btn btn-sm btn-danger px-3 rounded tag-delete">
+                                    <a href="{{route('apartment.types.destroy', $entity->id)}}" class="btn btn-sm btn-danger px-3 rounded tag-delete">
                                         Delete
                                     </a>
                                 </td>

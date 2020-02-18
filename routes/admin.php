@@ -17,8 +17,8 @@ Route::group(['prefix' => 'admin'], function(){
     Route::resource('roles', 'User\RoleController');
 
     Route::group(['prefix' => 'apartment'], function(){
-        Route::resource('tags', 'Apartments\ApartmentTagController');
-        Route::resource('types', 'Apartments\ApartmentTypeController');
+        Route::resource('tags', 'Apartments\ApartmentTagController', ['as' => 'apartment']);
+        Route::resource('types', 'Apartments\ApartmentTypeController', ['as' => 'apartment']);
     });
 });
 

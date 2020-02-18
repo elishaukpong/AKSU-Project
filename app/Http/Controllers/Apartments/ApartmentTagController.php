@@ -17,7 +17,7 @@ class ApartmentTagController extends Controller
     protected $routeIndex = 'admin/apartment/tags';
 
     protected $pageTitle = 'Apartment Tag';
-    protected $createRoute = 'admin/apartment/create';
+    protected $createRoute = 'admin/apartment/tag/create';
 
     protected $viewIndex = 'apartment.tags.index';
     protected $viewCreate = 'apartment.tags.create';

@@ -61,8 +61,8 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="ticket-list.html"
+                <li class="sidebar-item @if(\Route::is('apartment.types.index')) selected @endif">
+                    <a class="sidebar-link @if(\Route::is('apartment.types.index')) active @endif" href="{{route('apartment.types.index')}}"
                        aria-expanded="false"><i class="icon-people"></i>
                         <span
                             class="hide-menu">Apartment Types
@@ -70,8 +70,8 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item @if(\Route::is('tags.index')) selected @endif">
-                    <a class="sidebar-link @if(\Route::is('tags.index')) active @endif" href="{{route('tags.index')}}"
+                <li class="sidebar-item @if(\Route::is('apartment.tags.index')) selected @endif">
+                    <a class="sidebar-link @if(\Route::is('apartment.tags.index')) active @endif" href="{{route('apartment.tags.index')}}"
                        aria-expanded="false"><i class="icon-people"></i>
                         <span
                             class="hide-menu">Apartment Tags
