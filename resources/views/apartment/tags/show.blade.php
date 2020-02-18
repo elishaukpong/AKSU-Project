@@ -17,7 +17,7 @@
                     <p class="">{{$entity->description}}</p>
 
                     <div class="text-center mt-5">
-                        <a href="{{route('tags.edit', $entity->id)}}" class="btn btn-sm px-5 mr-3 waves-effect waves-light btn-rounded btn-cyan">Edit</a>
+                        <a href="{{route('apartment.tags.edit', $entity->id)}}" class="btn btn-sm px-5 mr-3 waves-effect waves-light btn-rounded btn-cyan">Edit</a>
                         <a href="{{url()->previous()}}" class="btn btn-sm px-5 waves-effect waves-light btn-rounded btn-primary">Go Back</a>
                     </div>
                 </div>

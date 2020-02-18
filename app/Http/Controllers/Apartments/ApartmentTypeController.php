@@ -14,7 +14,7 @@ use Shamaseen\Repository\Generator\Utility\Controller;
 class ApartmentTypeController extends Controller
 {
 
-    protected $routeIndex = 'admin/apartment/tags';
+    protected $routeIndex = 'admin/apartment/types';
 
     protected $pageTitle = 'Apartment Type';
     protected $createRoute = 'admin/apartment/types/create';

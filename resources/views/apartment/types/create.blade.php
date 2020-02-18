@@ -9,7 +9,7 @@
         <div class="col-sm-12 col-md-6 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{route('tags.store')}}" method="POST">
+                    <form action="{{route('apartment.types.store')}}" method="POST">
                         @csrf
                         <div class="form-body">
                             <div class="row">

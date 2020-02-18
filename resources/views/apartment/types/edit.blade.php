@@ -9,7 +9,7 @@
         <div class="col-sm-12 col-md-6 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{route('tags.update', $entity->id)}}" method="POST">
+                    <form action="{{route('apartment.types.update', $entity->id)}}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-body">
