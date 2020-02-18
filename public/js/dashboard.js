@@ -9,7 +9,17 @@ $.ajaxSetup({
 $(document).ready(()=>{
     $('.role-delete').click(function(e){
         e.preventDefault();
-        let deleteUrl = $(this).attr('href');
+        deleteEntity(this);
+    });
+
+    $('.tag-delete').click(function(e){
+        e.preventDefault();
+        deleteEntity(this);
+    });
+
+
+    function deleteEntity(thisObject) {
+        let deleteUrl = $(thisObject).attr('href');
 
         Swal.fire({
             icon: 'info',
@@ -31,9 +41,8 @@ $(document).ready(()=>{
                     console.log(xhr.responseJSON);
                 },
                 success: function(result){
-                   console.log(result);
-                   location.reload();
+                    location.reload();
                 }});
         });
-    });
+    }
 });

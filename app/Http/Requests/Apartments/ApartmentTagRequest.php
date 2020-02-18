@@ -11,7 +11,8 @@ use Shamaseen\Repository\Generator\Utility\Request;
 class ApartmentTagRequest extends Request
 {
     protected $rules = [
-
+        'name' => 'required | string',
+        'description' => 'required | string',
     ];
 
     /**

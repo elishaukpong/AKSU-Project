@@ -10,8 +10,8 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">All User Roles</h4>
-                    <a href="{{route('roles.create')}}" class="text-white btn btn-dark btn-sm btn-rounded"><i class="far fa-heart"></i> Create New Role</a>
+                    <h4 class="card-title">All Apartment Tags</h4>
+                    <a href="{{route('tags.create')}}" class="text-white btn btn-dark btn-sm btn-rounded"><i class="far fa-heart"></i> Create New Tag</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-dark mb-0">
@@ -19,6 +19,7 @@
                         <tr>
                             <th scope="col">S/N</th>
                             <th scope="col">Name</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Action</th>
                         </tr>
                         </thead>
@@ -27,12 +28,17 @@
                             <tr>
                                 <th scope="row">{{$key + 1}}</th>
                                 <td>{{$entity->name}}</td>
+                                <td>{{$entity->shortdesc}}</td>
                                 <td>
-                                    <a href="{{route('roles.edit', $entity->id)}}" class="btn btn-sm btn-cyan px-3 rounded">
+                                    <a href="{{route('tags.show', $entity->id)}}" class="btn btn-sm btn-primary px-3 rounded">
+                                        Show
+                                    </a>
+
+                                    <a href="{{route('tags.edit', $entity->id)}}" class="btn btn-sm btn-cyan px-3 rounded">
                                         Edit
                                     </a>
 
-                                    <a href="{{route('roles.destroy', $entity->id)}}" class="btn btn-sm btn-danger px-3 rounded role-delete">
+                                    <a href="{{route('tags.destroy', $entity->id)}}" class="btn btn-sm btn-danger px-3 rounded tag-delete">
                                         Delete
                                     </a>
                                 </td>

@@ -14,15 +14,15 @@ use Shamaseen\Repository\Generator\Utility\Controller;
 class ApartmentTagController extends Controller
 {
 
-    protected $routeIndex = 'apartmentTags';
+    protected $routeIndex = 'admin/apartment/tags';
 
-    protected $pageTitle = 'ApartmentTag';
-    protected $createRoute = 'apartmentTags.create';
+    protected $pageTitle = 'Apartment Tag';
+    protected $createRoute = 'admin/apartment/create';
 
-    protected $viewIndex = 'apartmentTags.index';
-    protected $viewCreate = 'apartmentTags.create';
-    protected $viewEdit = 'apartmentTags.edit';
-    protected $viewShow = 'apartmentTags.show';
+    protected $viewIndex = 'apartment.tags.index';
+    protected $viewCreate = 'apartment.tags.create';
+    protected $viewEdit = 'apartment.tags.edit';
+    protected $viewShow = 'apartment.tags.show';
 
     /**
      * ApartmentTagController constructor.

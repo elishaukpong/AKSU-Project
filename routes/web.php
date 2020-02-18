@@ -44,3 +44,11 @@ Route::resource('roommaterequests', 'Apartments\RoomMateRequestController');
 
 Route::resource('files', 'Files\FileController');
 Route::resource('apartmenttypes', 'Apartments\ApartmentTypeController');
+
+Route::get('blog', function(){
+    return view('blog.index');
+})->name('blog');
+
+Route::get('blosg', function(){
+    return view('blog.index');
+})->name('alumni.index');
