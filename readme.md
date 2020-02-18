@@ -1,3 +1,3 @@
 
-## About AKSU MATTERS!
+## Leveath - Awesome School Community
 Coming soon
