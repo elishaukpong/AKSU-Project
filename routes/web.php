@@ -27,3 +27,22 @@ Route::get('/profile','UserController@profile')->name('profile');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'UserController@index')->name('home');
+
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::resource('apartments', 'Apartments\ApartmentController');
+});
+
+Route::resource('users', 'User\UserController');
+
+Route::resource('requests', 'Apartments\RequestController');
+Route::resource('roommates', 'Apartments\RoomMateController');
+Route::resource('rooms', 'Apartments\RoomController');
+Route::resource('apartmentrequests', 'Apartments\ApartmentRequestController');
+Route::resource('roommaterequests', 'Apartments\RoomMateRequestController');
+
+Route::resource('files', 'Files\FileController');
+Route::resource('types', 'Apartments\TypeController');
+Route::resource('apartmenttypes', 'Apartments\ApartmentTypeController');
+Route::resource('apartmenttags', 'Apartments\ApartmentTagController');
+Route::resource('roles', 'User\RoleController');

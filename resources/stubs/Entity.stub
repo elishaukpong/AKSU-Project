@@ -1,0 +1,14 @@
+<?php
+
+namespace App\{{folder}}{{path}};
+
+use Shamaseen\Repository\Generator\Utility\Entity;
+
+/**
+ * Class {{modelName}}
+ * @package App\{{folder}}
+ */
+class {{modelName}} extends Entity
+{
+    protected $guarded = [];
+}

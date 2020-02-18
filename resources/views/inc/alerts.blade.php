@@ -23,6 +23,7 @@
     </div>
 </div>
 @endif
+
 @if (session('new-user'))
    <div class="container">
     <div class="row justify-content-center">

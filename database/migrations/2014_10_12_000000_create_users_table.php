@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('slug')->index();
             $table->string('email')->unique();
             $table->string('reg_number')->unique();
-
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();

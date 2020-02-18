@@ -31,6 +31,9 @@
                 <li class="nav-item">
                     <a class="nav-link primary-color mx-3" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="btn btn-sm btn-primary rounded mx-3 mt-2" href="{{ route('register') }}">{{ __('Join Us') }}</a>
+                </li>
             </ul>
         </div>
     </div>

@@ -40,6 +40,18 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white mx-3" href="{{route('index')}}">{{ __('Home') }}</a>
                             </li>
+
+                            @if(\Route::current()->getName() == 'login')
+                            <li class="nav-item">
+                                <a class="nav-link text-white mx-3" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                            @endif
+                        
+                            @if(\Route::current()->getName() == 'register')
+                                <li class="nav-item">
+                                    <a class="nav-link text-white mx-3" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
                         @endguest
                     </ul>
                 </div>
