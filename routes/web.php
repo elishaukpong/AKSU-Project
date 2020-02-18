@@ -44,4 +44,3 @@ Route::resource('roommaterequests', 'Apartments\RoomMateRequestController');
 
 Route::resource('files', 'Files\FileController');
 Route::resource('apartmenttypes', 'Apartments\ApartmentTypeController');
-Route::resource('apartmenttags', 'Apartments\ApartmentTagController');

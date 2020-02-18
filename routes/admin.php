@@ -14,9 +14,12 @@
 Route::group(['prefix' => 'admin'], function(){
     Route::resource('users', 'User\UserController');
     Route::resource('files', 'Files\FileController');
-    Route::resource('apartmenttypes', 'Apartments\ApartmentTypeController');
-    Route::resource('apartmenttags', 'Apartments\ApartmentTagController');
     Route::resource('roles', 'User\RoleController');
+
+    Route::group(['prefix' => 'apartment'], function(){
+        Route::resource('tags', 'Apartments\ApartmentTagController');
+        Route::resource('types', 'Apartments\ApartmentTypeController');
+    });
 });
 
 

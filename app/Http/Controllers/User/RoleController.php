@@ -20,10 +20,10 @@ class RoleController extends Controller
     protected $pageTitle = 'Role';
     protected $createRoute = 'admin/roles/create';
 
-    protected $viewIndex = 'roles.index';
-    protected $viewCreate = 'roles.create';
-    protected $viewEdit = 'roles.edit';
-    protected $viewShow = 'roles.index';
+    protected $viewIndex = 'user.roles.index';
+    protected $viewCreate = 'user.roles.create';
+    protected $viewEdit = 'user.roles.edit';
+    protected $viewShow = 'user.roles.index';
 
     /**
      * RoleController constructor.
