@@ -13,6 +13,7 @@ $(function() {
     //         $parent.prev().fadeIn();
     //     });
     // })
+
     $('.onboard-prev-button').click(nextOrPreviousSlide);
     $('.onboard-next-button').click(nextOrPreviousSlide);
 
@@ -28,9 +29,6 @@ $(function() {
     }
 
     function fadeContent(parent, fadeDirection) {
-        parent.fadeOut(1000, function() {
-            fadeDirection == 'prev' ? parent.prev().fadeIn() : parent.next().fadeIn();
-        });
+        parent.fadeOut(1000, () => fadeDirection === 'prev' ? parent.prev().fadeIn() : parent.next().fadeIn());
     }
-
 });

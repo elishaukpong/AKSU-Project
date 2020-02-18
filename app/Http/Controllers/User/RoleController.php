@@ -4,7 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Requests\User\RoleRequest;
 use App\Interfaces\User\RoleInterface;
-use Shamaseen\Repository\Generator\Utility\Controller;
+use App\Http\Controllers\BaseController as Controller;
+
 
 /**
  * Class RoleController
@@ -14,15 +15,15 @@ use Shamaseen\Repository\Generator\Utility\Controller;
 class RoleController extends Controller
 {
 
-    protected $routeIndex = 'roles';
+    protected $routeIndex = 'admin/roles';
 
     protected $pageTitle = 'Role';
-    protected $createRoute = 'roles.create';
+    protected $createRoute = 'admin/roles/create';
 
     protected $viewIndex = 'roles.index';
     protected $viewCreate = 'roles.create';
     protected $viewEdit = 'roles.edit';
-    protected $viewShow = 'roles.show';
+    protected $viewShow = 'roles.index';
 
     /**
      * RoleController constructor.

@@ -12,9 +12,6 @@
                     </a>
                 </li>
                 <li class="list-divider"></li>
-                <li class="nav-small-cap"><span class="hide-menu">Menu</span></li>
-
-                <li class="list-divider"></li>
                 <li class="nav-small-cap">
                     <span class="hide-menu">Apartments</span>
                 </li>
@@ -55,8 +52,49 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="ticket-list.html"
+                       aria-expanded="false"><i class="icon-people"></i>
+                        <span
+                            class="hide-menu">Room Mate Request
+                                </span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="ticket-list.html"
+                       aria-expanded="false"><i class="icon-people"></i>
+                        <span
+                            class="hide-menu">Apartment Types
+                                </span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="ticket-list.html"
+                       aria-expanded="false"><i class="icon-people"></i>
+                        <span
+                            class="hide-menu">Apartment Tags
+                                </span>
+                    </a>
+                </li>
+
+                <li class="list-divider"></li>
+                <li class="nav-small-cap"><span class="hide-menu">Users</span></li>
+                <li class="sidebar-item @if(\Route::is('roles.index')) selected @endif">
+                    <a class="sidebar-link @if(\Route::is('roles.index')) active @endif" href="{{route('roles.index')}}"
+                       aria-expanded="false"><i class="icon-key"></i>
+                        <span
+                            class="hide-menu">Roles
+                                </span>
+                    </a>
+                </li>
+
                 <li class="list-divider"></li>
                 <li class="nav-small-cap"><span class="hide-menu">Alumni</span></li>
+
+
+
 
                 <li class="list-divider"></li>
                 <li class="nav-small-cap"><span class="hide-menu">Clique</span></li>

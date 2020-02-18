@@ -11,7 +11,7 @@ use Shamaseen\Repository\Generator\Utility\Request;
 class RoleRequest extends Request
 {
     protected $rules = [
-
+        'name' => 'required | string'
     ];
 
     /**
@@ -49,7 +49,9 @@ class RoleRequest extends Request
             // in case of edit
             case 'PUT':
             case 'PATCH':
-
+                    $this->rules = [
+                        'name' => 'required | string'
+                    ];
                 break;
             default:
                 break;

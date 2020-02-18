@@ -4,8 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Requests\User\UserRequest;
 use App\Interfaces\User\UserInterface;
-use Shamaseen\Repository\Generator\Utility\Controller;
-
+use App\Http\Controllers\BaseController as Controller;
 /**
  * Class UserController
  * @package App\Http\Controllers\User
@@ -107,5 +106,15 @@ class UserController extends Controller
     public function destroy($id)
     {
         return parent::destroy($id);
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function dashboard()
+    {
+        return view('user.dashboard');
     }
 }

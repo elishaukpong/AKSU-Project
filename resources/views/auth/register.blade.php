@@ -23,10 +23,12 @@
                         <div class="form-group row">
                             <div class="col-md-8 mx-auto">
                                 <input id="name" type="text" class="px-4 form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}"
-                                    required autofocus placeholder="Full Name"> @if ($errors->has('name'))
+                                    required autofocus placeholder="Full Name">
+                                @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('name') }}</strong>
-                                </span> @endif
+                                </span>
+                                @endif
                             </div>
                         </div>
 

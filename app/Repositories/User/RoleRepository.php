@@ -4,6 +4,7 @@ namespace App\Repositories\User;
 
 use App\Entities\User\Role;
 use App\Interfaces\User\RoleInterface;
+use Illuminate\Database\Eloquent\Collection;
 use Shamaseen\Repository\Generator\Utility\AbstractRepository;
 use Illuminate\Container\Container as App;
 
@@ -31,5 +32,13 @@ class RoleRepository extends AbstractRepository implements RoleInterface
     protected function getModelClass(): string
     {
         return Role::class;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function all($columns = ['*'])
+    {
+        // TODO: Implement all() method.
     }
 }
