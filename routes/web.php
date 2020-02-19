@@ -50,5 +50,6 @@ Route::get('blog', function(){
 })->name('blog');
 
 Route::get('blosg', function(){
+    return storage_path();
     return view('blog.index');
 })->name('alumni.index');

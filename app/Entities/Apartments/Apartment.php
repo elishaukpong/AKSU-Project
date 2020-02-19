@@ -2,6 +2,7 @@
 
 namespace App\Entities\Apartments;
 
+use App\Entities\Files\File;
 use Shamaseen\Repository\Generator\Utility\Entity;
 
 /**
@@ -14,4 +15,17 @@ class Apartment extends Entity
     const UNAPPROVED_APARTMENT = '0';
 
     protected $guarded = [];
+
+    /**
+     * Get the apartment's file.
+     */
+    public function file()
+    {
+        return $this->morphMany(File::class, 'fileable');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(ApartmentTag::class);
+    }
 }
