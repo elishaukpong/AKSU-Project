@@ -16,6 +16,7 @@ $factory->define(Apartment::class, function (Faker $faker) {
        'apartment_type_id' => $apartmentType->id,
         'user_id' => $apartmentCreator->id,
         'approved' => $faker->randomElement([Apartment::APPROVED_APARTMENT, Apartment::UNAPPROVED_APARTMENT]),
-        'amount' => $faker->numberBetween(40000, 150000)
+        'amount' => $faker->numberBetween(40000, 150000),
+        'availability' => $faker->randomElement([0, 1]),
     ];
 });

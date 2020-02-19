@@ -2,6 +2,8 @@
 
 namespace App\Entities\User;
 
+use App\Entities\Apartments\Apartment;
+use App\Entities\Apartments\ApartmentView;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -34,6 +36,16 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function getRouteKeyName(){
         return 'slug';
+    }
+
+    public function apartments()
+    {
+        return $this->hasMany(Apartment::class);
+    }
+
+    public function requestapartmentsview()
+    {
+        return $this->hasMany(ApartmentView::class);
     }
 
     // Schedule a birthday notification

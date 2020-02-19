@@ -17,6 +17,15 @@ $(document).ready(()=>{
         deleteEntity(this);
     });
 
+    $('.wishlist, .roommate').click(function(){
+        Swal.fire({
+            icon: 'info',
+            title: 'Coming Soon!',
+            text: 'Hold Tight, this feature is coming soon!',
+            showCancelButton: true,
+            timer:3000
+        });
+    });
 
     function deleteEntity(thisObject) {
         let deleteUrl = $(thisObject).attr('href');

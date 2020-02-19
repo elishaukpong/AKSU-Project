@@ -29,11 +29,10 @@ Route::get('/profile','UserController@profile')->name('profile');
 Auth::routes(['verify' => true]);
 
 
-
 Route::group(['middleware' => 'auth'], function(){
     Route::resource('apartments', 'Apartments\ApartmentController');
-    Route::get('user/apartments', 'Apartments\ApartmentController@userApartments');
-//    Route::resource('apartments', 'Apartments\ApartmentController')->only(['index', 'show']);
+    Route::get('user/apartments', 'Apartments\ApartmentController@userApartments')->name('apartments.user.index');
+    Route::resource('apartment/viewsrequest', 'Apartments\ApartmentViewController', ['as' => 'apartment']);
     Route::get('/home', 'User\UserController@dashboard')->name('home');
 });
 
@@ -41,10 +40,8 @@ Route::resource('users', 'User\UserController');
 
 Route::resource('roommates', 'Apartments\RoomMateController');
 Route::resource('rooms', 'Apartments\RoomController');
-Route::resource('apartmentrequests', 'Apartments\ApartmentRequestController');
 Route::resource('roommaterequests', 'Apartments\RoomMateRequestController');
 
-Route::resource('files', 'Files\FileController');
 
 Route::get('blog', function(){
     return view('blog.index');
@@ -53,3 +50,6 @@ Route::get('blog', function(){
 Route::get('blosg', function(){
     return view('blog.index');
 })->name('alumni.index');
+
+Route::resource('wishlists', 'Wishlist\WishlistController');
+

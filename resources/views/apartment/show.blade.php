@@ -35,9 +35,19 @@
         <div class="col-sm-12 col-md-6 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <p class="small font-weight-medium">Name:</p>
                     <h1 class="page-title text-truncate text-dark font-weight-medium ">{{$entity->name}}.</h1>
                     <h2 class="page-title text-truncate text-dark font-weight-medium ">{{$entity->displayAmount}}</h2>
+                    @if(! $entity->viewedByOwner())
+                    <br>
+                        <button type="button" class="btn btn-sm waves-effect waves-light btn-rounded btn-danger wishlist my-1" style="font-size: 10px"><i class="far fa-heart"></i> Add to Wishlist</button>
+                        @if(! $entity->alreadyRequestedByUser())
+                            <button type="button" class="btn btn-sm waves-effect waves-light btn-rounded btn-dark my-1" data-toggle="modal" data-target="#see-apartment-request" style="font-size: 10px">Request To See</button>
+                        @else
+                            <button type="button" class="btn btn-sm waves-effect waves-light btn-rounded btn-dark my-1" style="font-size: 10px">Already Requested</button>
+                        @endif
+
+                        <button type="button" class="btn btn-sm waves-effect waves-light btn-rounded btn-light roommate my-1" style="font-size: 10px">Request Room Mate</button>
+                    @endif
 
                     <hr>
                     <p class="small font-weight-medium">Description:</p>
@@ -66,13 +76,46 @@
 
                     <div class="text-center mt-5">
                         @if($entity->viewedByOwner())
-                            <a href="{{route('apartments.edit', $entity->id)}}" class="btn btn-sm px-5 mr-1 waves-effect waves-light btn-rounded btn-cyan">Edit</a>
-                            <a href="{{route('apartments.destroy', $entity->id)}}" class="btn btn-sm px-5 mr-1 waves-effect waves-light btn-rounded btn-danger">Delete</a>
+                            <a href="{{route('apartments.edit', $entity->id)}}" class="btn btn-sm px-5 mr-1 waves-effect waves-light btn-rounded btn-cyan my-1">Edit</a>
+                            <a href="{{route('apartments.destroy', $entity->id)}}" class="btn btn-sm px-5 mr-1 waves-effect waves-light btn-rounded btn-danger my-1">Delete</a>
                         @endif
-                        <a href="{{url()->previous()}}" class="btn btn-sm px-5 waves-effect waves-light btn-rounded btn-primary">Go Back</a>
+                        <a href="{{route('apartments.index')}}" class="btn btn-sm px-5 waves-effect waves-light btn-rounded btn-primary my-1">Go Back</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    @if(!$entity->alreadyRequestedByUser())
+        <div id="see-apartment-request" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-dark text-center">
+                    <h4 class="modal-title" id="dark-header-modalLabel">Request To See Apartment</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{route('apartment.viewsrequest.store')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="apartment_id" value="{{$entity->id}}">
+                        <div class="form-group">
+                            <p class="small">Option Message to Apartment Owner</p>
+                            <textarea class="form-control {{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="3" placeholder="Apartment Description Here...">{{old('description')}}</textarea>
+
+                        </div>
+
+                        <div class="form-actions mt-4">
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    @endif
 @endsection

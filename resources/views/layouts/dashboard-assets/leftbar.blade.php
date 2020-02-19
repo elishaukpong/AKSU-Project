@@ -4,8 +4,8 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="sidebar-item @if(\Route::is('home')) selected @endif">
-                    <a class="sidebar-link sidebar-link @if(\Route::is('home')) active @endif" href="{{route('home')}}"
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="{{route('home')}}"
                                              aria-expanded="false">
                         <i data-feather="home" class="feather-icon"></i>
                         <span class="hide-menu">Dashboard</span>
@@ -13,35 +13,49 @@
                 </li>
                 <li class="list-divider"></li>
                 <li class="nav-small-cap">
-                    <span class="hide-menu">Apartments</span>
-                </li>
-
-                <li class="sidebar-item @if(\Route::is('apartments.create')) selected @endif">
-                    <a class="sidebar-link @if(\Route::is('apartments.create')) active @endif" href="{{route('apartments.create')}}"
-                       aria-expanded="false"><i class="icon-location-pin"></i>
-                        <span
-                            class="hide-menu">Add Apartment
-                                </span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item @if(\Route::is('apartments.index')) selected @endif">
-                    <a class="sidebar-link @if(\Route::is('apartments.index')) active @endif" href="{{route('apartments.index')}}"
-                                             aria-expanded="false"><i data-feather="tag" class="feather-icon"></i>
-                        <span
-                            class="hide-menu">List Apartments
-                                </span>
-                    </a>
+                    <span class="hide-menu">Menu</span>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="ticket-list.html"
-                       aria-expanded="false"><i class="icon-magic-wand"></i>
-                        <span
-                            class="hide-menu">Request Apartment
-                                </span>
+                    <a class="sidebar-link has-arrow active" href="javascript:void(0)" aria-expanded="false">
+                        <i class="icon-globe"></i>
+                        <span class="hide-menu">Apartments</span>
                     </a>
+                    <ul aria-expanded="false" class="collapse first-level base-level-line in">
+
+                        <li class="sidebar-item ">
+                            <a class="sidebar-link" href="{{route('apartments.create')}}"
+                               aria-expanded="false">
+
+                                <i class="icon-location-pin"></i>
+                                <span
+                                    class="hide-menu">Add Apartment
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{route('apartments.index')}}"
+                               aria-expanded="false"><i data-feather="tag" class="feather-icon"></i>
+                                <span
+                                    class="hide-menu">List Apartments
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{route('apartments.user.index')}}"
+                               aria-expanded="false"><i class="icon-magic-wand"></i>
+                                <span
+                                    class="hide-menu">My Apartments
+                                </span>
+                            </a>
+                        </li>
+
+
+                    </ul>
                 </li>
+
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="ticket-list.html"
@@ -61,8 +75,8 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item @if(\Route::is('apartment.types.index')) selected @endif">
-                    <a class="sidebar-link @if(\Route::is('apartment.types.index')) active @endif" href="{{route('apartment.types.index')}}"
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('apartment.types.index')}}"
                        aria-expanded="false"><i class="icon-people"></i>
                         <span
                             class="hide-menu">Apartment Types
@@ -70,8 +84,8 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item @if(\Route::is('apartment.tags.index')) selected @endif">
-                    <a class="sidebar-link @if(\Route::is('apartment.tags.index')) active @endif" href="{{route('apartment.tags.index')}}"
+                <li class="sidebar-item ">
+                    <a class="sidebar-link " href="{{route('apartment.tags.index')}}"
                        aria-expanded="false"><i class="icon-people"></i>
                         <span
                             class="hide-menu">Apartment Tags
@@ -81,8 +95,8 @@
 
                 <li class="list-divider"></li>
                 <li class="nav-small-cap"><span class="hide-menu">Users</span></li>
-                <li class="sidebar-item @if(\Route::is('roles.index')) selected @endif">
-                    <a class="sidebar-link @if(\Route::is('roles.index')) active @endif" href="{{route('roles.index')}}"
+                <li class="sidebar-item ">
+                    <a class="sidebar-link " href="{{route('roles.index')}}"
                        aria-expanded="false"><i class="icon-key"></i>
                         <span
                             class="hide-menu">Roles

@@ -57,4 +57,20 @@ class Apartment extends Entity implements Helper
     {
         return $this->user_id === auth()->user()->id;
     }
+
+    public function viewRequests()
+    {
+        return $this->hasMany(ApartmentView::class);
+    }
+
+    public function hasViewRequests()
+    {
+        return $this->viewRequests()->count();
+    }
+
+    public function alreadyRequestedByUser()
+    {
+        return in_array(auth()->user()->id,$this->viewRequests()->pluck('user_id')->toArray());
+    }
+
 }

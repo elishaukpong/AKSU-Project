@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Repositories\Apartments;
+namespace App\Repositories\Wishlist;
 
-use App\Entities\Apartments\ApartmentRequest;
-use App\Interfaces\Apartments\ApartmentRequestInterface;
+use App\Entities\Wishlist\Wishlist;
+use App\Interfaces\Wishlist\WishlistInterface;
 use Shamaseen\Repository\Generator\Utility\AbstractRepository;
 use Illuminate\Container\Container as App;
 
 /**
- * Class ApartmentRequestRepository
- * @package App\Repositories\Apartments
- * @property-read ApartmentRequest $model
+ * Class WishlistRepository
+ * @package App\Repositories\Wishlist
+ * @property-read Wishlist $model
  */
-class ApartmentRequestRepository extends AbstractRepository implements ApartmentRequestInterface
+class WishlistRepository extends AbstractRepository implements WishlistInterface
 {
     protected $with = [];
 
@@ -30,6 +30,6 @@ class ApartmentRequestRepository extends AbstractRepository implements Apartment
      */
     protected function getModelClass(): string
     {
-        return ApartmentRequest::class;
+        return Wishlist::class;
     }
 }

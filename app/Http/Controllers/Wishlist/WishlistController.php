@@ -1,38 +1,35 @@
 <?php
 
-namespace App\Http\Controllers\Apartments;
+namespace App\Http\Controllers\Wishlist;
 
-use App\Entities\Apartments\ApartmentTag;
-use App\Http\Requests\Apartments\ApartmentRequest;
-use App\Interfaces\Apartments\ApartmentInterface;
+use App\Http\Requests\Wishlist\WishlistRequest;
+use App\Interfaces\Wishlist\WishlistInterface;
 use Shamaseen\Repository\Generator\Utility\Controller;
-use App\Entities\Apartments\ApartmentType;
 
 /**
- * Class ApartmentController
- * @package App\Http\Controllers\Apartments
- * @property-read ApartmentInterface $interface
+ * Class WishlistController
+ * @package App\Http\Controllers\Wishlist
+ * @property-read WishlistInterface $interface
  */
-class ApartmentController extends Controller
+class WishlistController extends Controller
 {
 
-    protected $routeIndex = 'apartments';
+    protected $routeIndex = 'wishlists';
 
-    protected $pageTitle = 'Apartment';
-    protected $createRoute = 'apartment.create';
+    protected $pageTitle = 'Wishlist';
+    protected $createRoute = 'wishlists.create';
 
-    protected $viewIndex = 'apartment.index';
-    protected $viewCreate = 'apartment.create';
-    protected $viewEdit = 'apartment.edit';
-    protected $viewShow = 'apartment.show';
-
+    protected $viewIndex = 'wishlists.index';
+    protected $viewCreate = 'wishlists.create';
+    protected $viewEdit = 'wishlists.edit';
+    protected $viewShow = 'wishlists.show';
 
     /**
-     * ApartmentController constructor.
-     * @param ApartmentInterface $interface
-     * @param ApartmentRequest $request
+     * WishlistController constructor.
+     * @param WishlistInterface $interface
+     * @param WishlistRequest $request
      */
-    public function __construct(ApartmentInterface $interface, ApartmentRequest $request)
+    public function __construct(WishlistInterface $interface, WishlistRequest $request)
     {
         parent::__construct($interface, $request);
     }
@@ -44,7 +41,6 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        $this->limit = 12;
         return parent::index();
     }
 
@@ -55,8 +51,6 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        $this->params['types'] = ApartmentType::all();
-        $this->params['tags'] = ApartmentTag::all();
         return parent::create();
     }
 
@@ -89,8 +83,6 @@ class ApartmentController extends Controller
      */
     public function edit($id)
     {
-        $this->params['types'] = ApartmentType::all();
-        $this->params['tags'] = ApartmentTag::all();
         return parent::edit($id);
     }
 
@@ -115,12 +107,5 @@ class ApartmentController extends Controller
     public function destroy($id)
     {
         return parent::destroy($id);
-    }
-
-    public function userApartments()
-    {
-        $this->params['entities'] = auth()->user()->apartments()->simplePaginate($this->limit);
-
-        return view('apartment.users.index', $this->params);
     }
 }

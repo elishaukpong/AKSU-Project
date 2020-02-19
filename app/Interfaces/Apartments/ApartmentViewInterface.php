@@ -6,10 +6,10 @@ namespace App\Interfaces\Apartments;
 use Shamaseen\Repository\Generator\Utility\ContractInterface;
 
 /**
- * Interface ApartmentRequestInterface
+ * Interface ApartmentViewInterface
  * @package App\Interfaces\Apartments
  */
-interface ApartmentRequestInterface extends ContractInterface
+interface ApartmentViewInterface extends ContractInterface
 {
 
 }

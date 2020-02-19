@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Requests\Apartments;
+namespace App\Http\Requests\Wishlist;
 
 use Shamaseen\Repository\Generator\Utility\Request;
 
 /**
- * Class ApartmentRequestRequest
- * @package App\Http\Requests\Apartments
+ * Class WishlistRequest
+ * @package App\Http\Requests\Wishlist
  */
-class ApartmentRequestRequest extends Request
+class WishlistRequest extends Request
 {
     protected $rules = [
 

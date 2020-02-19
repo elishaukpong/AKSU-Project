@@ -2,35 +2,36 @@
 
 namespace App\Http\Controllers\Apartments;
 
-use App\Http\Requests\Apartments\ApartmentRequestRequest;
-use App\Interfaces\Apartments\ApartmentRequestInterface;
+use App\Http\Requests\Apartments\ApartmentViewRequest;
+use App\Interfaces\Apartments\ApartmentViewInterface;
 use Shamaseen\Repository\Generator\Utility\Controller;
 
 /**
- * Class ApartmentRequestController
+ * Class ApartmentViewController
  * @package App\Http\Controllers\Apartments
- * @property-read ApartmentRequestInterface $interface
+ * @property-read ApartmentViewInterface $interface
  */
-class ApartmentRequestController extends Controller
+class ApartmentViewController extends Controller
 {
 
-    protected $routeIndex = 'apartmentRequests';
+    protected $routeIndex = '';
 
-    protected $pageTitle = 'ApartmentRequest';
-    protected $createRoute = 'apartmentRequests.create';
+    protected $pageTitle = 'ApartmentView';
+    protected $createRoute = 'apartmentViews.create';
 
-    protected $viewIndex = 'apartmentRequests.index';
-    protected $viewCreate = 'apartmentRequests.create';
-    protected $viewEdit = 'apartmentRequests.edit';
-    protected $viewShow = 'apartmentRequests.show';
+    protected $viewIndex = 'apartmentViews.index';
+    protected $viewCreate = 'apartmentViews.create';
+    protected $viewEdit = 'apartmentViews.edit';
+    protected $viewShow = 'apartmentViews.show';
 
     /**
-     * ApartmentRequestController constructor.
-     * @param ApartmentRequestInterface $interface
-     * @param ApartmentRequestRequest $request
+     * ApartmentViewController constructor.
+     * @param ApartmentViewInterface $interface
+     * @param ApartmentViewRequest $request
      */
-    public function __construct(ApartmentRequestInterface $interface, ApartmentRequestRequest $request)
+    public function __construct(ApartmentViewInterface $interface, ApartmentViewRequest $request)
     {
+        $this->routeIndex = url()->previous();
         parent::__construct($interface, $request);
     }
 
