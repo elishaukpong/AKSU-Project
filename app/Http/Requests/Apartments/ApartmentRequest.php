@@ -11,7 +11,15 @@ use Shamaseen\Repository\Generator\Utility\Request;
 class ApartmentRequest extends Request
 {
     protected $rules = [
-
+        'name' => 'required | string',
+        'landmark' => 'required | string',
+        'description' => 'required | string',
+        'location' => 'required | string',
+        'apartment_type_id' => 'required | integer',
+        'apartment_tags' => 'required | array',
+        'apartment_file' => 'required | image | mimes:jpeg,png,jpg,gif,svg',
+        'apartment_second_file' => 'image | mimes:jpeg,png,jpg,gif,svg',
+        'apartment_third_file' => 'image | mimes:jpeg,png,jpg,gif,svg',
     ];
 
     /**

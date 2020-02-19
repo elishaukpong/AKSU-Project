@@ -15,4 +15,15 @@ class ApartmentTag extends Entity implements Helper
     use ModelHelpers;
 
     protected $guarded = [];
+
+    public static $colors = ['light'];
+
+    public function apartments()
+    {
+        return $this->belongsToMany(Apartment::class);
+    }
+
+    public static function getButtonColor(){
+        return self::$colors[array_rand(self::$colors, 1)];
+    }
 }

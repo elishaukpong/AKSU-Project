@@ -2,7 +2,7 @@
 
 namespace App\Entities\Files;
 
-//use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Shamaseen\Repository\Generator\Utility\Entity;
 
 /**
@@ -11,7 +11,7 @@ use Shamaseen\Repository\Generator\Utility\Entity;
  */
 class File extends Entity
 {
-//    use Sluggable;
+    use Sluggable;
 
     protected $guarded = [];
 
@@ -23,17 +23,22 @@ class File extends Entity
         return $this->morphTo();
     }
 
-//    /**
-//     * Return the sluggable configuration array for this model.
-//     *
-//     * @return array
-//     */
-//    public function sluggable()
-//    {
-//        return [
-//            'slug' => [
-//                'source' => 'name'
-//            ]
-//        ];
-//    }
+    public function getDisplayPath()
+    {
+        return '/storage/' . $this->path;
+    }
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
 }

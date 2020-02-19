@@ -131,6 +131,27 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
+        'apartment_type_id' => [
+            'required' => 'Please Choose Apartment Type',
+            'integer' => 'Please Choose Apartment Type',
+        ],
+
+        'apartment_tags' => [
+            'required' => 'Please Choose Atleast One Apartment Tag',
+        ],
+
+        'apartment_file' => [
+            'required' => 'Please Choose Atleast One Image For Apartment',
+            'image' => 'Please Choose a Valid Image File',
+        ],
+
+        'apartment_second_file' => [
+            'image' => 'Please Choose a Valid Second Image File',
+        ],
+        'apartment_third_file' => [
+            'image' => 'Please Choose a Valid Third Image File',
+        ],
     ],
 
     /*

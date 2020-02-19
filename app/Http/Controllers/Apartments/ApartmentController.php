@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Apartments;
 
+use App\Entities\Apartments\ApartmentTag;
 use App\Http\Requests\Apartments\ApartmentRequest;
 use App\Interfaces\Apartments\ApartmentInterface;
 use Shamaseen\Repository\Generator\Utility\Controller;
+use App\Entities\Apartments\ApartmentType;
 
 /**
  * Class ApartmentController
@@ -51,6 +53,8 @@ class ApartmentController extends Controller
      */
     public function create()
     {
+        $this->params['types'] = ApartmentType::all();
+        $this->params['tags'] = ApartmentTag::all();
         return parent::create();
     }
 

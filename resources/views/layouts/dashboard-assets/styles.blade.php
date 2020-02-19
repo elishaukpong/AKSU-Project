@@ -5,3 +5,5 @@
 <link href="{{asset('assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
 <!-- Custom CSS -->
 <link href="{{asset('dist/css/style.min.css')}}" rel="stylesheet">
+
+@stack('dashboard-css')

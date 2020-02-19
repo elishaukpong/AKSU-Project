@@ -8,16 +8,27 @@
     <div class="row">
         <div class="col-12 mt-4">
             <div class="card-columns">
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="../assets/images/big/img6.jpg" alt="Card image cap">
+                @foreach($entities as $entity)
+                    <div class="card">
+                    <img class="card-img-top img-fluid" src="{{$entity->photos->first()->getDisplayPath()}}" alt="Card image cap">
                     <div class="card-body">
-                        <h4 class="card-title">Card title that wraps to a new line</h4>
-                        <p class="card-text">This is a longer card with supporting text below as a natural
-                            lead-in to additional content. This content is a little bit longer.</p>
+                        <h2 class="card-title">{{$entity->name}}</h2>
+                        <p class="card-text">
+                            {{$entity->shortDesc}}
+                        </p>
 
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="{{route('apartments.show', $entity->id)}}" class="form-control btn btn-sm waves-effect waves-light btn-rounded btn-dark mx-1 mt-1">Show</a>
+
+                        <hr>
+
+                        <div class="tags mb-3">
+                            @foreach($entity->tags as $tag)
+                                <button type="button" class="btn btn-sm waves-effect waves-light btn-rounded btn-{{\App\Entities\Apartments\ApartmentTag::getButtonColor()}} mx-1 mt-1">{{$tag->name}}</button>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>

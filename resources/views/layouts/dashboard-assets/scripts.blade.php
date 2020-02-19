@@ -20,3 +20,5 @@
 
 <script src="{{ asset('js/dashboard.js') }}" ></script>
 
+@stack('dashboard-scripts')
+

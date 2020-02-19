@@ -50,6 +50,13 @@ Route::get('blog', function(){
 })->name('blog');
 
 Route::get('blosg', function(){
-    return storage_path();
+    $apartments = scandir(storage_path(). '/app/public/apartments');
+    unset($apartments[0]);
+    unset($apartments[1]);
+
+    $n = collect($apartments)->map(function($ap){
+            return 'apartments/' . $ap;
+    });
+    return $n;
     return view('blog.index');
 })->name('alumni.index');
