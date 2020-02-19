@@ -36,19 +36,34 @@ class FileRepository extends AbstractRepository implements FileInterface
         return File::class;
     }
 
-    public function createImage($imageObject, $model, $local_path)
+    public function createImage($imageObject, $model, $local_path, $description = null)
     {
         $attributes['file'] = $imageObject;
         $attributes['name'] = $imageObject->getClientOriginalName();
         $attributes['size'] = $imageObject->getSize();
         $attributes['type'] = $imageObject->getClientMimeType();
+        $attributes['description'] = $description;
         $attributes['fileable_type'] = get_class($model);
         $attributes['fileable_id'] = $model->id;
         $attributes['user_id'] = auth()->user()->id;
         $attributes['local_path'] = $local_path;
 
-
         return $this->create($attributes);
+    }
+
+    public function updateImage($imageObject, $model, $local_path, $description = null)
+    {
+        if($description){
+            $oldPhoto = $model->photos()->whereDescription($description)->first();
+
+            if($oldPhoto){
+                $this->deleteFile($oldPhoto->path);
+                $oldPhoto->delete();
+            }
+        }
+
+        $this->createImage($imageObject, $model, $local_path, $description);
+
     }
 
     /**
@@ -64,4 +79,12 @@ class FileRepository extends AbstractRepository implements FileInterface
 
         return parent::create($attributes);
     }
+
+    public function deleteFile($filePath)
+    {
+        return $this->storage::disk('public')->delete($filePath);
+    }
+
+
+
 }

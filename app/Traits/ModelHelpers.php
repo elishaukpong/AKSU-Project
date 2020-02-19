@@ -17,4 +17,11 @@ trait ModelHelpers
     {
         return ucwords($name);
     }
+
+    public function getDisplayAmountAttribute()
+    {
+        return 'NGN ' . number_format($this->amount);
+    }
+
+
 }

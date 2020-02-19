@@ -36,7 +36,8 @@
             <div class="card">
                 <div class="card-body">
                     <p class="small font-weight-medium">Name:</p>
-                    <h1 class="page-title text-truncate text-dark font-weight-medium ">{{$entity->name}}</h1>
+                    <h1 class="page-title text-truncate text-dark font-weight-medium ">{{$entity->name}}.</h1>
+                    <h2 class="page-title text-truncate text-dark font-weight-medium ">{{$entity->displayAmount}}</h2>
 
                     <hr>
                     <p class="small font-weight-medium">Description:</p>
@@ -64,7 +65,10 @@
                     </div>
 
                     <div class="text-center mt-5">
-                        <a href="{{route('apartments.edit', $entity->id)}}" class="btn btn-sm px-5 mr-3 waves-effect waves-light btn-rounded btn-cyan">Edit</a>
+                        @if($entity->viewedByOwner())
+                            <a href="{{route('apartments.edit', $entity->id)}}" class="btn btn-sm px-5 mr-1 waves-effect waves-light btn-rounded btn-cyan">Edit</a>
+                            <a href="{{route('apartments.destroy', $entity->id)}}" class="btn btn-sm px-5 mr-1 waves-effect waves-light btn-rounded btn-danger">Delete</a>
+                        @endif
                         <a href="{{url()->previous()}}" class="btn btn-sm px-5 waves-effect waves-light btn-rounded btn-primary">Go Back</a>
                     </div>
                 </div>

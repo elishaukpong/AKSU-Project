@@ -26,6 +26,7 @@ class ApartmentController extends Controller
     protected $viewEdit = 'apartment.edit';
     protected $viewShow = 'apartment.show';
 
+
     /**
      * ApartmentController constructor.
      * @param ApartmentInterface $interface
@@ -43,6 +44,7 @@ class ApartmentController extends Controller
      */
     public function index()
     {
+        $this->limit = 12;
         return parent::index();
     }
 
@@ -87,6 +89,8 @@ class ApartmentController extends Controller
      */
     public function edit($id)
     {
+        $this->params['types'] = ApartmentType::all();
+        $this->params['tags'] = ApartmentTag::all();
         return parent::edit($id);
     }
 
@@ -111,5 +115,10 @@ class ApartmentController extends Controller
     public function destroy($id)
     {
         return parent::destroy($id);
+    }
+
+    public function userApartments()
+    {
+        return;
     }
 }

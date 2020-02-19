@@ -15,6 +15,8 @@ class File extends Entity
 
     protected $guarded = [];
 
+    static $imageDescription = ['1' => 'primary_image', '2' => 'second_image', '3' =>'third_image'];
+
     /**
      * Get all of the owning fileable models.
      */
@@ -40,5 +42,10 @@ class File extends Entity
                 'source' => 'name'
             ]
         ];
+    }
+
+    public static function getImageDescription($key)
+    {
+       return self::$imageDescription[$key];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Repositories\Apartments;
 
 use App\Entities\Apartments\Apartment;
+use App\Entities\Files\File;
 use App\Interfaces\Apartments\ApartmentInterface;
 use App\Repositories\Files\FileRepository;
 use Illuminate\Database\Eloquent\Collection;
@@ -43,6 +44,7 @@ class ApartmentRepository extends AbstractRepository implements ApartmentInterfa
     public function create($data = [])
     {
         $apartmentData['name'] = $data['name'];
+        $apartmentData['amount'] = $data['amount'];
         $apartmentData['location'] = $data['location'];
         $apartmentData['landmark'] = $data['landmark'];
         $apartmentData['apartment_type_id'] = $data['apartment_type_id'];
@@ -53,21 +55,56 @@ class ApartmentRepository extends AbstractRepository implements ApartmentInterfa
         $apartment->tags()->attach($data['apartment_tags']);
         $primaryImage = $data['apartment_file'];
 
-        $this->uploadImage($primaryImage, $apartment, 'apartments');
+        $this->uploadImage($primaryImage, $apartment, 'apartments', File::getImageDescription(1));
 
         if(isset($data['apartment_second_file'])){
-            $this->uploadImage($data['apartment_second_file'], $apartment, 'apartments');
+            $this->uploadImage($data['apartment_second_file'], $apartment, 'apartments', File::getImageDescription(2));
         }
 
         if(isset($data['apartment_third_file'])){
-            $this->uploadImage($data['apartment_third_file'], $apartment, 'apartments');
+            $this->uploadImage($data['apartment_third_file'], $apartment, 'apartments', File::getImageDescription(3));
         }
 
         return $apartment;
     }
 
-    private function uploadImage($imageObject, $model, $path)
+    public function update($entityId = 0, $data= [])
     {
-        $this->file->createImage($imageObject, $model, $path);
+        $apartment = $this->model->findOrFail($entityId);
+
+        $apartmentData['name'] = $data['name'];
+        $apartmentData['amount'] = $data['amount'];
+        $apartmentData['location'] = $data['location'];
+        $apartmentData['landmark'] = $data['landmark'];
+        $apartmentData['apartment_type_id'] = $data['apartment_type_id'];
+        $apartmentData['description'] = $data['description'];
+
+        $apartment->update($apartmentData);
+        $apartment->tags()->sync($data['apartment_tags']);
+
+        if(isset($data['apartment_file'])){
+            $this->updateImage($data['apartment_file'], $apartment, 'apartments', File::getImageDescription(1));
+        }
+
+        if(isset($data['apartment_second_file'])){
+            $this->updateImage($data['apartment_second_file'], $apartment, 'apartments', File::getImageDescription(2));
+        }
+
+        if(isset($data['apartment_third_file'])){
+            $this->updateImage($data['apartment_third_file'], $apartment, 'apartments', File::getImageDescription(3));
+        }
+
+
+        return $data;
+    }
+
+    private function uploadImage($imageObject, $model, $path, $description = null)
+    {
+        return $this->file->createImage($imageObject, $model, $path, $description);
+    }
+
+    private function updateImage($imageObject, $model, $path, $description = null)
+    {
+        return $this->file->updateImage($imageObject, $model, $path, $description);
     }
 }

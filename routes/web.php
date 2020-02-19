@@ -32,6 +32,7 @@ Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => 'auth'], function(){
     Route::resource('apartments', 'Apartments\ApartmentController');
+    Route::get('user/apartments', 'Apartments\ApartmentController@userApartments');
 //    Route::resource('apartments', 'Apartments\ApartmentController')->only(['index', 'show']);
     Route::get('/home', 'User\UserController@dashboard')->name('home');
 });
@@ -50,13 +51,5 @@ Route::get('blog', function(){
 })->name('blog');
 
 Route::get('blosg', function(){
-    $apartments = scandir(storage_path(). '/app/public/apartments');
-    unset($apartments[0]);
-    unset($apartments[1]);
-
-    $n = collect($apartments)->map(function($ap){
-            return 'apartments/' . $ap;
-    });
-    return $n;
     return view('blog.index');
 })->name('alumni.index');

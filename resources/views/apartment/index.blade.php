@@ -17,7 +17,7 @@
                             {{$entity->shortDesc}}
                         </p>
 
-                        <a href="{{route('apartments.show', $entity->id)}}" class="form-control btn btn-sm waves-effect waves-light btn-rounded btn-dark mx-1 mt-1">Show</a>
+                        <a href="{{route('apartments.show', $entity->id)}}" class="form-control btn btn-sm waves-effect waves-light btn-rounded btn-dark mx-1 mt-1">See Apartment</a>
 
                         <hr>
 
@@ -29,6 +29,18 @@
                     </div>
                 </div>
                 @endforeach
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-4 mx-auto">
+            <div class="text-center">
+                {{$entities->links()}}
             </div>
         </div>
     </div>

@@ -15,6 +15,8 @@ use Shamaseen\Repository\Generator\Utility\Entity;
 class Apartment extends Entity implements Helper
 {
 
+    //TODO add model listeners to delete images when an apartment is deleted
+    //TODO use softdeletes too on all models
     use ModelHelpers;
 
     const APPROVED_APARTMENT = '1';
@@ -30,6 +32,12 @@ class Apartment extends Entity implements Helper
         return $this->morphMany(File::class, 'fileable');
     }
 
+    //TODO change apartment.index to use this, when youre ready to deploy
+//    public function primaryImage()
+//    {
+//        return $this->photos()->whereDescription('primary_image')->first();
+//    }
+
     public function tags()
     {
         return $this->belongsToMany(ApartmentTag::class);
@@ -43,5 +51,10 @@ class Apartment extends Entity implements Helper
     public function owner()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function viewedByOwner()
+    {
+        return $this->user_id === auth()->user()->id;
     }
 }
