@@ -4,6 +4,7 @@ namespace App\Entities\Apartments;
 
 use App\Entities\Files\File;
 use App\Entities\User\User;
+use App\Entities\Wishlist\Wishlist;
 use App\Traits\ModelHelpers;
 use App\Contract\ModelHelpers as Helper;
 use Shamaseen\Repository\Generator\Utility\Entity;
@@ -30,6 +31,16 @@ class Apartment extends Entity implements Helper
     public function photos()
     {
         return $this->morphMany(File::class, 'fileable');
+    }
+
+    public function wishlist()
+    {
+        return $this->morphMany(Wishlist::class, 'wishable');
+    }
+
+    public function alreadyWishlistedByUser()
+    {
+        return in_array(auth()->user()->id,$this->wishlist()->pluck('user_id')->toArray());
     }
 
     //TODO change apartment.index to use this, when youre ready to deploy

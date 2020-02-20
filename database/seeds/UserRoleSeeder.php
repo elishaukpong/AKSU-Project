@@ -12,6 +12,9 @@ class UserRoleSeeder extends Seeder
      */
     public function run()
     {
-        factory(Role::class, 6)->create();
+        Role::create(['name' => 'super_admin']);
+        Role::create(['name' => 'admin']);
+        Role::create(['name' => 'alumni']);
+        Role::create(['name' => 'user']);
     }
 }

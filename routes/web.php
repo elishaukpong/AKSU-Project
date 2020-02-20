@@ -54,3 +54,8 @@ Route::get('alumni', function(){
 })->name('alumni.index');
 
 
+
+Route::resource('cliques', 'Cliques\CliqueController');
+Route::resource('cliquemembers', 'Cliques\CliqueMembersController');
+Route::resource('cliquemembers', 'Cliques\CliqueMemberController');
+Route::resource('coins', 'Coins\CoinController');

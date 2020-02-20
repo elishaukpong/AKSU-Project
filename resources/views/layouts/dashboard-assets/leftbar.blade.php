@@ -17,7 +17,7 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow active" href="javascript:void(0)" aria-expanded="false">
+                    <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false">
                         <i class="icon-globe"></i>
                         <span class="hide-menu">Apartments</span>
                     </a>
@@ -56,24 +56,37 @@
                     </ul>
                 </li>
 
-
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="ticket-list.html"
-                       aria-expanded="false"><i class="icon-people"></i>
-                        <span
-                            class="hide-menu">Find Room Mate
-                                </span>
+                    <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false">
+                        <i class="icon-people"></i>
+                        <span class="hide-menu">Room Mates</span>
                     </a>
+                    <ul aria-expanded="false" class="collapse first-level base-level-line in">
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="ticket-list.html"
+                               aria-expanded="false"><i class="icon-people"></i>
+                                <span
+                                    class="hide-menu">Find Room Mate
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="ticket-list.html"
+                               aria-expanded="false">
+                                <i class="icon-user-follow"></i>
+                                <span
+                                    class="hide-menu">Room Mate Request
+                                </span>
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="ticket-list.html"
-                       aria-expanded="false"><i class="icon-people"></i>
-                        <span
-                            class="hide-menu">Room Mate Request
-                                </span>
-                    </a>
-                </li>
+
+
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{route('apartment.types.index')}}"

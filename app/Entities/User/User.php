@@ -4,6 +4,7 @@ namespace App\Entities\User;
 
 use App\Entities\Apartments\Apartment;
 use App\Entities\Apartments\ApartmentView;
+use App\Entities\Cliques\Clique;
 use App\Entities\Wishlist\Wishlist;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -57,6 +58,16 @@ class User extends Authenticatable implements MustVerifyEmail
     public function apartmentwishlist()
     {
         return $this->wishlists()->where('wishable_type', get_class(Apartment::class));
+    }
+
+    public function clique()
+    {
+        return $this->hasOne(Clique::class);
+    }
+
+    public function cliqueMemberships()
+    {
+        
     }
 
 

@@ -39,11 +39,15 @@
                     <h2 class="page-title text-truncate text-dark font-weight-medium ">{{$entity->displayAmount}}</h2>
                     @if(! $entity->viewedByOwner())
                     <br>
-                        <button type="button" data-toggle="modal" data-target="#add-to-wishlist" class="btn btn-sm waves-effect waves-light btn-rounded btn-danger apartment-wishlist my-1" style="font-size: 10px"><i class="far fa-heart"></i> Add to Wishlist</button>
+                        @if(! $entity->alreadyWishlistedByUser())
+                            <button type="button" data-toggle="modal" data-target="#add-to-wishlist" class="btn btn-sm waves-effect waves-light btn-rounded btn-danger apartment-wishlist my-1" style="font-size: 10px"><i class="far fa-heart"></i> Add to Wishlist</button>
+                        @else
+                            <button type="button" data-toggle="modal" data-target="#add-to-wishlist" class="btn btn-sm waves-effect waves-light btn-rounded btn-danger apartment-wishlist my-1" style="font-size: 10px"><i class="fas fa-heart"></i> Wishlisted</button>
+                        @endif
                         @if(! $entity->alreadyRequestedByUser())
                             <button type="button" class="btn btn-sm waves-effect waves-light btn-rounded btn-dark my-1" data-toggle="modal" data-target="#see-apartment-request" style="font-size: 10px">Request To See</button>
                         @else
-                            <button type="button" class="btn btn-sm waves-effect waves-light btn-rounded btn-dark my-1" style="font-size: 10px">Already Requested</button>
+                            <button type="button" class="btn btn-sm waves-effect waves-light btn-rounded btn-dark my-1" style="font-size: 10px"><i class="fas fa-check"></i> Requested</button>
                         @endif
 
                         <button type="button" class="btn btn-sm waves-effect waves-light btn-rounded btn-light roommate my-1" style="font-size: 10px">Request Room Mate</button>
@@ -64,8 +68,6 @@
 
                     <p class="small font-weight-medium">Added By:</p>
                     <p class="">{{$entity->owner->name}}</p>
-
-
 
                     <hr>
                     <div class="tags mb-3">
