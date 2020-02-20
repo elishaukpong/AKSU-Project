@@ -2,7 +2,6 @@ $.ajaxSetup({
     headers: {
         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
     }
-
 });
 
 
@@ -17,7 +16,7 @@ $(document).ready(()=>{
         deleteEntity(this);
     });
 
-    $('.wishlist, .roommate').click(function(){
+    $('.roommate').click(function(){
         Swal.fire({
             icon: 'info',
             title: 'Coming Soon!',
@@ -54,4 +53,6 @@ $(document).ready(()=>{
                 }});
         });
     }
+
 });
+

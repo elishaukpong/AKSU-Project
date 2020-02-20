@@ -4,6 +4,7 @@ namespace App\Entities\User;
 
 use App\Entities\Apartments\Apartment;
 use App\Entities\Apartments\ApartmentView;
+use App\Entities\Wishlist\Wishlist;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -47,6 +48,17 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(ApartmentView::class);
     }
+
+    public function wishlists()
+    {
+        return $this->morphMany(Wishlist::class, 'wishable');
+    }
+
+    public function apartmentwishlist()
+    {
+        return $this->wishlists()->where('wishable_type', get_class(Apartment::class));
+    }
+
 
     // Schedule a birthday notification
 //    $user->notifyAt(new BirthdayNotification, Carbon::parse($user->birthday));

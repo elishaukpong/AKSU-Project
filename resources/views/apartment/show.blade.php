@@ -39,7 +39,7 @@
                     <h2 class="page-title text-truncate text-dark font-weight-medium ">{{$entity->displayAmount}}</h2>
                     @if(! $entity->viewedByOwner())
                     <br>
-                        <button type="button" class="btn btn-sm waves-effect waves-light btn-rounded btn-danger wishlist my-1" style="font-size: 10px"><i class="far fa-heart"></i> Add to Wishlist</button>
+                        <button type="button" data-toggle="modal" data-target="#add-to-wishlist" class="btn btn-sm waves-effect waves-light btn-rounded btn-danger apartment-wishlist my-1" style="font-size: 10px"><i class="far fa-heart"></i> Add to Wishlist</button>
                         @if(! $entity->alreadyRequestedByUser())
                             <button type="button" class="btn btn-sm waves-effect waves-light btn-rounded btn-dark my-1" data-toggle="modal" data-target="#see-apartment-request" style="font-size: 10px">Request To See</button>
                         @else
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    @if(!$entity->alreadyRequestedByUser())
+    @if(! $entity->alreadyRequestedByUser())
         <div id="see-apartment-request" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -118,4 +118,30 @@
         </div><!-- /.modal-dialog -->
     </div>
     @endif
+
+        <div id="add-to-wishlist" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-dark text-center">
+                    <h4 class="modal-title" id="dark-header-modalLabel">Add Apartment to Wishlist?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{route('wishlists.store')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="apartment_id" value="{{$entity->id}}">
+
+                        <div class="form-actions mt-4">
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-info">Yes</button>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
 @endsection

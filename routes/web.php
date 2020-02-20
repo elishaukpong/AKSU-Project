@@ -30,10 +30,12 @@ Auth::routes(['verify' => true]);
 
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::resource('apartments', 'Apartments\ApartmentController');
-    Route::get('user/apartments', 'Apartments\ApartmentController@userApartments')->name('apartments.user.index');
-    Route::resource('apartment/viewsrequest', 'Apartments\ApartmentViewController', ['as' => 'apartment']);
     Route::get('/home', 'User\UserController@dashboard')->name('home');
+    Route::resource('apartments', 'Apartments\ApartmentController');
+    Route::get('apartments/{apartment}/viewsrequest', 'Apartments\ApartmentViewController@showApartmentRequests')->name('apartment.viewsrequest.showrequests');
+    Route::resource('apartment/viewsrequest', 'Apartments\ApartmentViewController', ['as' => 'apartment']);
+    Route::get('user/apartments', 'Apartments\ApartmentController@userApartments')->name('apartments.user.index');
+    Route::resource('wishlists', 'Wishlist\WishlistController');
 });
 
 Route::resource('users', 'User\UserController');
@@ -47,9 +49,8 @@ Route::get('blog', function(){
     return view('blog.index');
 })->name('blog');
 
-Route::get('blosg', function(){
+Route::get('alumni', function(){
     return view('blog.index');
 })->name('alumni.index');
 
-Route::resource('wishlists', 'Wishlist\WishlistController');
 

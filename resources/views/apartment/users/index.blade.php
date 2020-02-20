@@ -18,7 +18,7 @@
                         </p>
 
                         @if($entity->hasViewRequests())
-                            <a href="{{route('apartments.show', $entity->id)}}" class="form-control btn btn-sm waves-effect waves-light btn-rounded btn-light mx-1 mt-1">See Requests</a>
+                            <a href="{{route('apartment.viewsrequest.showrequests', $entity->id)}}" class="form-control btn btn-sm waves-effect waves-light btn-rounded btn-light mx-1 mt-1">See Requests</a>
                         @endif
 
                         <a href="{{route('apartments.show', $entity->id)}}" class="form-control btn btn-sm waves-effect waves-light btn-rounded btn-dark mx-1 mt-1">See Apartment</a>

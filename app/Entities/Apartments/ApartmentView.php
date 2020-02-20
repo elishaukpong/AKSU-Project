@@ -15,7 +15,7 @@ class ApartmentView extends Entity
 
     public function viewer()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
     }
 
     public function owner()

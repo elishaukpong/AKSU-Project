@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Apartments;
 
+use App\Entities\Apartments\Apartment;
 use App\Http\Requests\Apartments\ApartmentViewRequest;
 use App\Interfaces\Apartments\ApartmentViewInterface;
 use Shamaseen\Repository\Generator\Utility\Controller;
@@ -16,21 +17,18 @@ class ApartmentViewController extends Controller
 
     protected $routeIndex = '';
 
-    protected $pageTitle = 'ApartmentView';
-    protected $createRoute = 'apartmentViews.create';
-
-    protected $viewIndex = 'apartmentViews.index';
-    protected $viewCreate = 'apartmentViews.create';
-    protected $viewEdit = 'apartmentViews.edit';
-    protected $viewShow = 'apartmentViews.show';
+    protected $pageTitle = 'Apartment View';
+    protected $viewIndex = 'apartment.request.index';
+    private $apartment;
 
     /**
      * ApartmentViewController constructor.
      * @param ApartmentViewInterface $interface
      * @param ApartmentViewRequest $request
      */
-    public function __construct(ApartmentViewInterface $interface, ApartmentViewRequest $request)
+    public function __construct(ApartmentViewInterface $interface, ApartmentViewRequest $request, Apartment $apartment)
     {
+        $this->apartment = $apartment;
         $this->routeIndex = url()->previous();
         parent::__construct($interface, $request);
     }
@@ -46,16 +44,6 @@ class ApartmentViewController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return parent::create();
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @return \Illuminate\Http\Response
@@ -65,48 +53,11 @@ class ApartmentViewController extends Controller
         return parent::store();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function showApartmentRequests($id)
     {
-        return parent::show($id);
-    }
+        $apartment = $this->apartment->findOrFail($id);
+        $this->params['entities'] = $apartment->viewRequests()->simplePaginate($this->limit);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        return parent::edit($id);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function update($id)
-    {
-        return parent::update($id);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @throws \Exception
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function destroy($id)
-    {
-        return parent::destroy($id);
+        return view('apartment.requests.usershow', $this->params);
     }
 }

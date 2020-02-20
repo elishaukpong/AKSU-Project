@@ -11,7 +11,7 @@ use Shamaseen\Repository\Generator\Utility\Request;
 class WishlistRequest extends Request
 {
     protected $rules = [
-
+        'apartment_id' => 'required | integer'
     ];
 
     /**
